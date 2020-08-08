@@ -36,16 +36,16 @@ A blogging site made in python django framewok.
  -----------------------------
 # here are some screenshots
  Home-Page
-![home-page](Django-blog/Screenshots/home.png)
+![home-page](Screenshots/home.png)
 
 Main-Page 
-![main-page](Django-blog/Screenshots/main.png)
+![main-page](Screenshots/main.png)
 
 login
-![login](Django-blog/Screenshots/login.png)
+![login](Screenshots/login.png)
 
 manage-blogs
-![manage-blogs](Django-blog/Screenshots/manage_blogs.png)
+![manage-blogs](Screenshots/manage_blogs.png)
 
 write blogs
-![write-blogs](Django-blog/Screenshots/write_blog.png)
+![write-blogs](Screenshots/write_blog.png)
