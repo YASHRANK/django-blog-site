@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+{% load static%}
+
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- our style stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/materialize.css' %}">
+
+    <link href="{% static 'tinymce/css/prism.css' %}" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1 0 auto;
+        }
+    </style>
+    {% block head %}
+
+
+    {% endblock %}
+</head>
+
+<body>
+
+
+    {% include 'blog_app/navbar.html'%}
+    {% include 'blog_app/messaging.html'%}
+
+
+    <main>
+        {% block content%}
+
+
+        <!-- Content here -->
+        {% endblock %}
+    </main>
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"
+        integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/esm/dom-utils/contains.min.js"
+        integrity="sha512-n3d19QJbMjmNPWCqcCJiRqmb2dHy089OrSyF1KrT/ZEhi9+s8OD3yfuQOnNPQb1n1DviB+RPsipkcwXGUFoT8A=="
+        crossorigin="anonymous"></script>
+
+    <script>M.AutoInit(); </script>
+    <script src="{% static 'js/materialize.js' %}"></script>
+
+    {% include 'blog_app/footer.html'%}
+</body>
+
+</html>

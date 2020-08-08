@@ -1,0 +1,35 @@
+<footer class="page-footer blue-grey darken-3">
+    <div class="container">
+        <div class="row">
+            <div class="col l4 s12">
+                <h5 class="white-text">ABOUT </h5>
+                <p class="grey-text text-lighten-4"> Hi , I am Yash. The developer of dev-blogs. This blog site is made
+                    for developers around the world and the web is completely made in Django.
+
+                </p>
+            </div>
+            <div class="col l4 s12">
+                <h5 class="white-text">CONTACT US</h5>
+
+                <p class="grey-text text-lighten-4"><i class="material-icons left">mail</i><a
+                        href="mailto:yashranka187@gmail.com">yashranka187@gmail.com</a></p>
+            </div>
+            <div class="col l4  s12">
+                <h5 class="white-text">Stay Connected !</h5>
+                <form action="{% url 'blog:connect_mail' %}" method='post'>
+                    {% csrf_token %}
+                    <input class="form-control white-text" type="email" name="c_email" id="" placeholder=" Email">
+                    <button class="btn btn-small white black-text" type="submit">connect</button>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2020 dev-blogs
+
+        </div>
+    </div>
+</footer>

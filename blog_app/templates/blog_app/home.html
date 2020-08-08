@@ -1,0 +1,56 @@
+{% extends 'blog_app/base.html'%}
+
+{% load static %}
+
+{% block content %}
+<div class="container">
+
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <h2 class="header center-align">Recent posts</h2>
+            <!-- Section description -->
+            <p class="center-align">stay updated </p>
+        </div>
+    </div>
+
+    <div class="row">
+        {% for post in posts%}
+        <div class="col s12 m6 l3">
+            <!-- Card -->
+
+            <div class="card large
+             hoverable">
+
+                <!--Card image-->
+                <div class="card-image">
+                    <a href="{% url 'blog:blog_detail' post.slug %}">
+                        <img src="{{post.image.url}}" alt="post image" style="-webkit-filter: grayscale(50%) blur(2px);
+                        filter: grayscale(50%) blur(2px);">
+
+                    </a>
+                </div>
+
+                <!--Card content-->
+                <div class="card-content">
+                    <span class="card-title">
+                        <h4 class="header">{{post.title}}</h4>
+                    </span>
+
+                </div>
+                <div class="card-action">
+                    <div class="chip">{{post.author}}</div>
+                </div>
+
+
+            </div>
+            <!-- Card -->
+        </div>
+        {% endfor %}
+    </div>
+    <div class=" section">
+        <h4 class="center-align"><a href="{% url 'blog:main_page'%}">All posts...</a></h4>
+    </div>
+
+</div>
+
+{% endblock %}

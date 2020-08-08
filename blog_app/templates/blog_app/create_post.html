@@ -1,0 +1,85 @@
+{% extends 'blog_app/base.html'%}
+
+{% load static %}
+
+{%block head%}
+{{form.media}}
+{% endblock %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col ad-container">
+            <span>
+
+            </span>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12 m12 l3">
+            <!-- modal trigger  -->
+            <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Formating Instructions</a>
+
+            <!-- Modal Structure -->
+            <div id="modal1" class="modal modal-fixed-footer">
+                <div class="modal-content">
+                    <h4>Formating options for better Representation of your blog </h4>
+                    <span>
+                        <p style="font-family: Arial; font-size:24px;"> Font style - Arial </p>
+                        <p style="font-size: 36px;">Main heading in 36px</p>
+                        <p style="font-size: 18px;">some content Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit.
+                            Unde voluptatum veritatis accusantium nam illo excepturi quibusdam asperiores quos? Illum
+                            quidem
+                            maiores soluta placeat!</p>
+                        <p style="font-size: 24px;">Sub heading in 24px</p>
+                        <p style="font-size: 18px;"> content in 18px </p>
+                        <p style="font-size: 18px;"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti
+                            quis
+                            magni, fugiat iusto laudantium nemo, minima inventore id pariatur, nesciunt nobis
+                            dignissimos
+                            fugit. Ex inventore velit sed perspiciatis tempora minima consequuntur. Eveniet, placeat!
+                        </p>
+                    </span>
+                </div>
+                <div class="modal-footer">
+                    <a class="modal-close waves-effect waves-green btn-flat">ok</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12 m12 l9">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="input-field">
+                    {{form.title}}
+                    <label for="id_title">Title</label>
+                </div>
+
+                <div class="input-field">
+                    {{form.content}}
+                </div>
+
+                <div class="input-field">
+                    {{form.tags}}
+                </div>
+                <sup>Enter comma saperated values </sup>
+
+                <Button class="waves-effect orange waves-light btn-small right" type="submit"><i
+                        class="material-icons right">save</i>Save</Button>
+
+            </form>
+        </div>
+    </div>
+
+</div>
+</div>
+
+
+
+
+{% endblock %}

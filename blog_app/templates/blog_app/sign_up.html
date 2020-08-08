@@ -1,0 +1,86 @@
+{% extends 'blog_app/base.html'%}
+{% load static %}
+
+{% block head%}
+<style>
+    .row {
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .form-col {
+        margin-top: 100px;
+
+    }
+
+    .hero-image {
+        margin-top: 100px;
+        width: 100%;
+        height: auto;
+    }
+</style>
+{% endblock %}
+{% block content%}
+<div class="container">
+    <div class="row">
+
+        <div class="col form-col s12 offset-m2 m8 l4">
+            <form action="" method="POST">
+                {% csrf_token %}
+
+                <h4 class="center-align">Sign up</h4>
+
+                <div class="row">
+                    <div class="col">
+                        <!-- First name -->
+                        {{form.first_name}}
+                    </div>
+                    <div class="col">
+                        <!-- Last name -->
+                        {{form.last_name}}
+                    </div>
+                </div>
+
+
+                {{form.username}}
+                {{form.email}}
+                {{form.password1}}
+                {{form.password2}}
+                <button class="waves-effect waves-light btn-small" type="submit">Register</button>
+
+                <!-- Social register -->
+                <!-- <p class="center-align">or sign up with:</p>
+                <div class="row">
+                    <div class="col offset-s4 s12 offset-m4 m12 offset-l4 l12 ">
+                        <a href="#" class="" role="button"><i class="fab fa-facebook-f light-blue-text"></i></a>
+
+                        <a href="#" class="" role="button"><i class="fab fa-twitter light-blue-text"></i></a>
+
+                        <a href="#" class="" role="button"><i class="fab fa-linkedin-in light-blue-text"></i></a>
+
+                        <a href="#" class="" role="button"><i class="fab fa-github light-blue-text"></i></a>
+                    </div>
+                </div>
+                <hr> -->
+            </form>
+
+            <p class="right">Already have an account? <a href="{% url 'blog:login_user' %}">login here</a></p>
+        </div>
+
+        <div class="col s12 m12 l6">
+            <img class="hero-image" src="{% static 'images/signup.jpg'%}" alt="hero image">
+        </div>
+
+
+
+
+    </div>
+
+
+</div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,67 @@
+{%load static%}
+<nav class="blue-grey darken-4">
+    <div class="nav-wrapper">
+        <a href="{% url 'blog:home' %}" class="brand-logo hide-on-small-only"><i class="material-icons">layers
+            </i>Dev-Blogs</a>
+        <a href="#!" class="brand-logo small hide-on-med-and-up">Dev-Blogs</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+
+            {% if user.is_authenticated%}
+
+            <li><a href="{% url 'blog:home' %}">Home</a></li>
+            <li><a href="{% url 'blog:write_post' %}">Write</a></li>
+            <li><a class="chip red white-text"><strong>{{request.user}}</strong></a></li>
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><i class="material-icons">person</i></a>
+            </li>
+
+            {% else %}
+
+            <li><a href="{% url 'blog:sign_up' %}">Sign Up</a></li>
+            <li><a href="{% url 'blog:login_user' %}">Login</a></li>
+            {% endif %}
+
+        </ul>
+    </div>
+</nav>
+
+<ul class="sidenav" id="mobile-demo">
+
+    <li class="center-align">
+        <h3 class="flow-text">Dev-Blogs</h3>
+    </li>
+    <li class="divider"></li>
+    {% if user.is_authenticated%}
+    <li>
+        <div class="user-view">
+            <div class="background">
+                <img src="{% static 'images/profile_bg.jpg' %}">
+            </div>
+            <p><img class="circle" src="{% static 'images/p1.jpg' %}"></p>
+            <span class="black-text name">{{request.user}}</span>
+            <span class="black-text email">{{request.user.email}}</span>
+        </div>
+    </li>
+    <li><a href="{% url 'blog:home' %}"><i class="material-icons">home</i>Home</a></li>
+    <li><a href="{% url 'blog:my_blogs'%}"><i class="material-icons">web</i>My blogs</a></li>
+    <li><a href="{% url 'blog:write_post' %}"><i class="material-icons">edit</i>Write</a></li>
+    <li class="divider"></li>
+    <li><a href="{% url 'blog:logout_user' %}"><i class="material-icons">power_settings_new</i>Logout</a></li>
+    {% else %}
+    <li><a href="{% url 'blog:home' %}">Home</a></li>
+    <li><a href="{% url 'blog:login_user' %}">Login</a></li>
+    <li><a href="{% url 'blog:sign_up' %}">Sign Up</a></li>
+
+
+    {% endif %}
+
+
+
+</ul>
+
+<ul id="dropdown1" class="dropdown-content">
+    <li><a href="{% url 'blog:my_blogs'%}"><i class="material-icons">web</i>My blogs</a></li>
+    <li class="divider"></li>
+    <li><a href="{% url 'blog:logout_user' %}"><i class="material-icons">power_settings_new</i>Logout</a></li>
+
+</ul>
