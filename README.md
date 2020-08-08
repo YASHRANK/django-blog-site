@@ -26,7 +26,7 @@ A blogging site made in python django framewok.
  ### Database 
  * SQLite 
  * PostgreSQL ( configure in seetings.py )
- 
+ ---------------
  # NOTE 
  #### Before Running Project , make sure to run migration commands and createsuperuser
  #### Before using SMTP service make sure to configure it in settings.py file and in the blog_app folder utils.py 
