@@ -31,7 +31,7 @@ A blogging site made in python django framewok.
  #### Before Running Project , make sure to run migration commands and createsuperuser
  #### Before using SMTP service make sure to configure it in settings.py file and in the blog_app folder utils.py 
  #### The hero-image for blogs are selected randomly.
- #### 
+ #### add your credentials and secret key to environment varibles
  
  -----------------------------
 # here are some screenshots
