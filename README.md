@@ -51,7 +51,7 @@ A blogging site made in python django framewok.
 ![write-blogs](Screenshots/write_blog.png)
 
 ##### comments
-![commnet](Screenshots/commnet.png)
+![commnet](Screenshots/comment.png)
 
 ##### messaging
 ![messaging](Screenshots/messaging.png)
